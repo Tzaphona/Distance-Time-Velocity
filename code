@@ -1,0 +1,30 @@
+#Calculating Time/Distance/Speed
+
+#Choice - what parameter to calculate, speed time or displacment
+print ('What would you like to calculate?')
+choice = raw_input("Enter 'x' for Displacment, 'v' for Speed, 't' for Time: ")
+
+if choice == 'v':# Need to calculate >>>SPPED<<<
+    
+    t = input ('Please enter Time: ')
+    x = input ('Please enter Distance: ')
+    v = x/t
+    print 'The average speed calculated:', v,' kp/h'
+    
+elif choice == 'x': # Need to calculte >>>DISTANCE<<<
+    v = input ('Please enter Speed: ')
+    t = input ('Please enter Time: ')
+    x = v*t
+    print 'Total Distance:', x, 'km' 
+
+elif choice == 't': # Need to calculte >>>TIME<<<
+    v = input ('Please enter Speed: ')
+    x = input ('Please enter Distance: ')
+    t = x/v
+    
+    print 'It will Take: ', t, ' hours'
+    
+
+    
+    
+   
