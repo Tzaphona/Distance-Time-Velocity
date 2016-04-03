@@ -1,30 +1,60 @@
+
 #Calculating Time/Distance/Speed
 
 #Choice - what parameter to calculate, speed time or displacment
-print ('What would you like to calculate?')
-choice = raw_input("Enter 'x' for Displacment, 'v' for Speed, 't' for Time: ")
 
-if choice == 'v':# Need to calculate >>>SPPED<<<
+print ('    ***What would you like to calculate?***')
+
+choice = raw_input("Enter 'x' for Distance, 'v' for Speed, 't' for Time: ")
+
+        # Need to calculate >>>SPPED<<<
+if choice == 'v':
+        # X ZONE
+    x = input ('Please enter Distance in KM: ')
+    xl = x*1000
+        # Y ZONE
+    t = input ('Please enter Time in Hours:')
+    t_min = int(t)*60
+    t_min_min = int((t - int(t))*60)
+    xt = (t_min + t_min_min)*60
+    print xt, '<==total result in sec'
+        # V ZONE
+    v = xl/xt
+    v_final = v*3600/1000
+    print 'The average speed calculated:', v_final,' kp/h'
     
-    t = input ('Please enter Time: ')
-    x = input ('Please enter Distance: ')
-    v = x/t
-    print 'The average speed calculated:', v,' kp/h'
-    
-elif choice == 'x': # Need to calculte >>>DISTANCE<<<
+        # Need to calculte >>>DISTANCE<<<
+
+elif choice == 'x':
+        # V ZONE
     v = input ('Please enter Speed: ')
+    float(v)
+    v_final = (v*1000)/3600
+    print v_final
+        # T ZONE
     t = input ('Please enter Time: ')
-    x = v*t
+    t_min = int(t)*60
+    t_min_min = ((t - int(t))*60)
+        # X ZONE
+    xt = (t_min + t_min_min)*60    
+    x = (v_final*xt)/1000
     print 'Total Distance:', x, 'km' 
 
-elif choice == 't': # Need to calculte >>>TIME<<<
+        # Need to calculte >>>TIME<<<
+
+elif choice == 't':
+        # V ZONE
     v = input ('Please enter Speed: ')
+    float(v)
+    v_final = (v*1000)/3600
+    print v_final
+    
+        # X ZONE
     x = input ('Please enter Distance: ')
-    t = x/v
+    xl = x*1000
+    
+        # T ZONE
+    t = (xl/v_final)/3600
     
     print 'It will Take: ', t, ' hours'
     
-
-    
-    
-   
